@@ -37,6 +37,17 @@ fn main() {
     make_copy(x);
     println!("The value of x is {}", x);
 
+    let s5 = gives_ownership();
+
+    println!("The value of s5 is {}", s5);
+
+    let s6 = String::from("s6");
+    println!("The value of s6 is {}", s6);
+
+    let s7 = takes_and_gives_back(s6);
+    println!("The value of s7 is {}", s7);
+    // println!("The value of s6 is {}", s6);
+
 }
 
 fn ownership(some_string: String) {
@@ -45,4 +56,13 @@ fn ownership(some_string: String) {
 
 fn make_copy(some_number:i32) {
     println!("The value of some_number is {}", some_number);
+}
+
+fn gives_ownership() -> String {
+    let some_string = String::from("sx");
+    some_string
+}
+
+fn takes_and_gives_back(a_string: String) -> String {
+    a_string
 }
