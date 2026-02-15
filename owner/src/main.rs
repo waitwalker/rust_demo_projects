@@ -48,6 +48,13 @@ fn main() {
     println!("The value of s7 is {}", s7);
     // println!("The value of s6 is {}", s6);
 
+    let s8 = String::from("s8");
+    println!("The value of s8 is {}", s8);
+    let(s9,len) = calculate_length(s8);
+    println!("The value of s9 is {}", s9);
+    println!("The value of len is {}", len);
+    
+
 }
 
 fn ownership(some_string: String) {
@@ -65,4 +72,9 @@ fn gives_ownership() -> String {
 
 fn takes_and_gives_back(a_string: String) -> String {
     a_string
+}
+
+fn calculate_length(s:String)->(String,usize) {
+    let length = s.len();
+    (s, length)
 }
