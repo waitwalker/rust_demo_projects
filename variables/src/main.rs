@@ -15,4 +15,19 @@ fn main() {
     println!("The hour is {}",THE_HOUR);
 
     println!("The max value is {}", MAX_VALUE);
+
+    let y = 5;
+    println!("The value of y is {}", y);
+    // shadowing 隐藏
+    let y = y + 1;
+    println!("The value of y is {}", y);
+
+    let y = y * 2;
+    println!("The value of y is {}", y);
+
+    let spaces = "   ";
+    println!("The value of spaces is {}", spaces);
+    let spaces = spaces.len() + 1;
+    println!("The value of spaces is {}", spaces);
+    
 }
