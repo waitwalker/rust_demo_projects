@@ -12,9 +12,12 @@ fn main() {
     println!("The value of hello is {}", hello);
     println!("The value of world is {}", world);
 
-    let space = slice(&s1);
+    let my_string = "hello world";
+
+    let space = slice(my_string);
     // space.clear();
     println!("The value of space is {}", space);
+
 }
 
 fn first_world(s: &String) -> usize {
@@ -27,7 +30,7 @@ fn first_world(s: &String) -> usize {
     s.len()
 }
 
-fn slice(s: &String) -> &str {
+fn slice(s: &str) -> &str {
     let bytes = s.as_bytes();
     for (i, &item) in bytes.iter().enumerate() {
         if item == b' ' {
