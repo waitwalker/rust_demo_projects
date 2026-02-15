@@ -31,8 +31,18 @@ fn main() {
     // s4移动到函数里面了，调用函数后s4就失效了
     ownership(s4);
     // println!("The value of s4 is {}", s4);
+
+    let x = 8;
+    // 传入函数内部的是x的一个副本，x的值不会受到影响，都是存储在栈上
+    make_copy(x);
+    println!("The value of x is {}", x);
+
 }
 
 fn ownership(some_string: String) {
     println!("The vaule of some_string is {}", some_string);
+}
+
+fn make_copy(some_number:i32) {
+    println!("The value of some_number is {}", some_number);
 }
