@@ -52,5 +52,12 @@ fn main() {
 
     // 解构
     let (x, y,z) = a;
-    println!("The value of x is {}, y is {}, z is {}", x, y,z)
+    println!("The value of x is {}, y is {}, z is {}", x, y,z);
+
+    let a1 = a.0;
+    let a2 = a.1;
+    let a3 = a.2;
+    println!("The value of a1 is {}, a2 is {}, a3 is {}", a1, a2, a3);
+
+    
 }
