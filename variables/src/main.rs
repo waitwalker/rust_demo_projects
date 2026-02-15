@@ -51,13 +51,24 @@ fn main() {
     println!("The value of a is {:?}", a);
 
     // 解构
-    let (x, y,z) = a;
-    println!("The value of x is {}, y is {}, z is {}", x, y,z);
+    let (x, y, z) = a;
+    println!("The value of x is {}, y is {}, z is {}", x, y, z);
 
     let a1 = a.0;
     let a2 = a.1;
     let a3 = a.2;
     println!("The value of a1 is {}, a2 is {}, a3 is {}", a1, a2, a3);
 
-    
+    let array1: [String; 5] = [
+        "abcd".to_string(),
+        "b".to_string(),
+        "c".to_string(),
+        "d".to_string(),
+        "e".to_string(),
+    ];
+    println!("The value of array1 is {:?}", array1);
+
+    // 声明三个元素都是3的数组
+    let array2: [i32; 3] = [3, 3, 3];
+    println!("The value of array2 is {:?}", array2);
 }
