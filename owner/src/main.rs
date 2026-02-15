@@ -53,7 +53,6 @@ fn main() {
     let(s9,len) = calculate_length(s8);
     println!("The value of s9 is {}", s9);
     println!("The value of len is {}", len);
-    
 
 }
 
