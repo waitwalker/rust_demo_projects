@@ -23,11 +23,17 @@ fn main() {
     let s5 = &mut s3;
     println!("The value of s5 is {}", s5);
 
-
+    let s7 = dangle();
+    println!("The value of s7 is {}", s7);
 }
 
 fn calculate_length(s: &mut String) -> usize {
     println!("The value of {} in function", s);
     s.push_str(" World!");
     s.len()
+}
+
+fn dangle() -> &String {
+    let s = String::from("Hello");
+    &s
 }
