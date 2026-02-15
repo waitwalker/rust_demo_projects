@@ -32,4 +32,15 @@ fn main() {
 
     let guess: u32 = "42".parse().expect("Not a number!");
     println!("The guess is {}", guess);
+
+    let sum = 5 + 10;
+    let difference = 95.5 - 4.3;
+    let product = 4 * 5;
+    let quotient = 20.0 / 4.0;
+
+    println!("The sum is {}", sum);
+    println!("The difference is {}", difference);
+    println!("The product is {}", product);
+    println!("The quotient is {}", quotient);
+
 }
