@@ -6,6 +6,24 @@ fn main() {
     // 把引用作为函数参数这个行为叫做借用
     let len = calculate_length(&mut s1);
     println!("The length of '{}' is {}", s1, len);
+
+    let mut sx = String::from("Hello");
+    let s2 = &mut sx;       
+    println!("The value of s2 is {}", s2);
+
+    // let s3 = &mut sx;
+    // println!("The value of s3 is {}", s3);
+
+    let mut s3 = String::from("What is this?");
+    {
+        let s4 = &mut s3;
+        println!("The value of s4 is {}", s4);
+    }
+
+    let s5 = &mut s3;
+    println!("The value of s5 is {}", s5);
+
+
 }
 
 fn calculate_length(s: &mut String) -> usize {
