@@ -43,4 +43,14 @@ fn main() {
     println!("The product is {}", product);
     println!("The quotient is {}", quotient);
 
+    let t = true;
+
+    println!("The value of t is {}", t);
+
+    let a: (i32, f64, char) = (500, 6.4, 'a');
+    println!("The value of a is {:?}", a);
+
+    // 解构
+    let (x, y,z) = a;
+    println!("The value of x is {}, y is {}, z is {}", x, y,z)
 }
