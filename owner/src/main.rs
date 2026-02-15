@@ -27,6 +27,12 @@ fn main() {
     println!("The value of s2 is {}", s2);
     println!("The value of s3 is {}", s3);
 
+    let s4 = String::from("Hello, World!");
+    // s4移动到函数里面了，调用函数后s4就失效了
+    ownership(s4);
+    // println!("The value of s4 is {}", s4);
+}
 
-
+fn ownership(some_string: String) {
+    println!("The vaule of some_string is {}", some_string);
 }
