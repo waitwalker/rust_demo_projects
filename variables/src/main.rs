@@ -71,4 +71,16 @@ fn main() {
     // 声明三个元素都是3的数组
     let array2: [i32; 3] = [3, 3, 3];
     println!("The value of array2 is {:?}", array2);
+
+    // 遍历数组
+    // 访问数组元素
+    for i in 0..array1.len() {
+        println!("element: {}", array1[i]);
+    }
+
+    for element in array1.iter() {
+        println!("current element:{}",element);
+    }
+
+
 }
