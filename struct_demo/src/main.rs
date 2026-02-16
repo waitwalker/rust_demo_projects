@@ -25,4 +25,19 @@ fn main() {
     // 重新赋值,struct 必须可变，才能赋值
     user1.email = String::from("123456@gmail.com");
     println!("username:{}, email:{}, sign_in_count:{}, activie:{}",user1.username,user1.email,user1.sign_in_count,user1.active);
+
+    let mut user2 = build_user(String::from("LiKai"), String::from("zhang@gmail.com"));
+    println!("username:{}, email:{}, sign_in_count:{}, activie:{}",user2.username,user2.email,user2.sign_in_count,user2.active);
+
+    user2.email = String::from("126@gmail.com");
+    println!("username:{}, email:{}, sign_in_count:{}, activie:{}",user2.username,user2.email,user2.sign_in_count,user2.active);
+}
+
+fn build_user(username:String,email:String) -> User {
+    User {
+        username: username,
+        email: email,
+        sign_in_count: 1,
+        active: true,
+    }
 }
