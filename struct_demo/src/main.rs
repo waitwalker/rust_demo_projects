@@ -24,20 +24,42 @@ fn main() {
 
     // 重新赋值,struct 必须可变，才能赋值
     user1.email = String::from("123456@gmail.com");
-    println!("username:{}, email:{}, sign_in_count:{}, activie:{}",user1.username,user1.email,user1.sign_in_count,user1.active);
+    println!(
+        "username:{}, email:{}, sign_in_count:{}, activie:{}",
+        user1.username, user1.email, user1.sign_in_count, user1.active
+    );
 
     let mut user2 = build_user(String::from("LiKai"), String::from("zhang@gmail.com"));
-    println!("username:{}, email:{}, sign_in_count:{}, activie:{}",user2.username,user2.email,user2.sign_in_count,user2.active);
+    println!(
+        "username:{}, email:{}, sign_in_count:{}, activie:{}",
+        user2.username, user2.email, user2.sign_in_count, user2.active
+    );
 
     user2.email = String::from("126@gmail.com");
-    println!("username:{}, email:{}, sign_in_count:{}, activie:{}",user2.username,user2.email,user2.sign_in_count,user2.active);
+    println!(
+        "username:{}, email:{}, sign_in_count:{}, activie:{}",
+        user2.username, user2.email, user2.sign_in_count, user2.active
+    );
 
-    let mut user3 = build_user_from_user(String::from("zhaz"),user2);
-    println!("username:{}, email:{}, sign_in_count:{}, activie:{}",user3.username,user3.email,user3.sign_in_count,user3.active);
+    let mut user3 = build_user_from_user(String::from("zhaz"), user2);
+    println!(
+        "username:{}, email:{}, sign_in_count:{}, activie:{}",
+        user3.username, user3.email, user3.sign_in_count, user3.active
+    );
+
+    // tuple color
+    let red = Color(255, 0, 0);
+
+    println!("red:{},{},{}", red.0, red.1, red.2);
+
+    let w = 30;
+    let h = 50;
+
+    println!("area:{}", area(w, h));
 }
 
 // 字段名和参数名一样时，可以简写
-fn build_user(username:String,email:String) -> User {
+fn build_user(username: String, email: String) -> User {
     User {
         username,
         email,
@@ -46,9 +68,12 @@ fn build_user(username:String,email:String) -> User {
     }
 }
 
-fn build_user_from_user(username:String, user:User) -> User {
-    User {
-        username,
-        ..user
-    }
+fn build_user_from_user(username: String, user: User) -> User {
+    User { username, ..user }
+}
+
+struct Color(i32, i32, i32);
+
+fn area(width: u32, height: u32) -> u32 {
+    width * height
 }
