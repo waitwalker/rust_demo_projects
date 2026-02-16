@@ -33,10 +33,11 @@ fn main() {
     println!("username:{}, email:{}, sign_in_count:{}, activie:{}",user2.username,user2.email,user2.sign_in_count,user2.active);
 }
 
+// 字段名和参数名一样时，可以简写
 fn build_user(username:String,email:String) -> User {
     User {
-        username: username,
-        email: email,
+        username,
+        email,
         sign_in_count: 1,
         active: true,
     }
