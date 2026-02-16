@@ -5,6 +5,12 @@ struct User {
     active: bool,
 }
 
+#[derive(Debug)]
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
 fn main() {
     println!("Hello, world!");
 
@@ -56,6 +62,12 @@ fn main() {
     let h = 50;
 
     println!("area:{}", area(w, h));
+
+    let rect = Rectangle {
+        width: 30,
+        height: 50,
+    };
+    println!("area:{:?}", rect);
 }
 
 // 字段名和参数名一样时，可以简写
@@ -76,4 +88,8 @@ struct Color(i32, i32, i32);
 
 fn area(width: u32, height: u32) -> u32 {
     width * height
+}
+
+fn area_rectangle(rectangle: &Rectangle) -> u32 {
+    rectangle.width * rectangle.height
 }
