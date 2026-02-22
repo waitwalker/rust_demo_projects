@@ -19,6 +19,21 @@ fn main() {
     let coinUsAlabama = Coin::Quarter(UsState::Alabama);
     let value = value_in_cents(coinUsAlabama);
     println!("{:?}",value);
+
+    let five = Some(5);
+    let six = plus_one(five);
+    println!("{:?}",six);
+
+    let none = plus_one(None);
+    println!("{:?}",none); 
+    
+}
+
+fn plus_one(x:Option<i32>) -> Option<i32> {
+    match x {
+        None => None,
+        Some(y) => Some(y + 1)
+    }
 }
 
 #[derive(Debug)]
