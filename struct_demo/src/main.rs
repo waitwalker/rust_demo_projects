@@ -76,6 +76,28 @@ fn main() {
 
     println!("rect2 area:{}",rect2.area());
     println!("rect2 area:{:?}",rect2);
+
+
+    let rect_a = Rectangle2 {
+        width:15,
+        height:18,
+    };
+
+    let rect_b = Rectangle2 {
+        width:20,
+        height:20,
+    };
+
+    let rect_c = Rectangle2 {
+        width:30,
+        height:20,
+    };
+
+    println!("rect_a can hold rect_b:{}",rect_a.can_hold(&rect_b));
+    println!("rect_c can hold rect_a:{}",rect_c.can_hold(&rect_a));
+
+    let rect_d = Rectangle2::new(10,200);
+    println!("rect_d:{:?}",rect_d);
 }
 
 // 字段名和参数名一样时，可以简写
@@ -111,5 +133,16 @@ struct Rectangle2 {
 impl Rectangle2 {
     fn area(&self) -> u32 {
         self.width * self.height
+    }
+
+    fn can_hold(&self, other: &Rectangle2) -> bool {
+        self.width > other.width && self.height > other.height
+    }
+
+    fn new(width:u32, height:u32) -> Self {
+        Self {
+            width,
+            height,
+        }
     }
 }
