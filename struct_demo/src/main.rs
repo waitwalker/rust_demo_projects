@@ -68,6 +68,14 @@ fn main() {
         height: 50,
     };
     println!("area:{:?}", rect);
+
+    let rect2 = Rectangle2 {
+        width:30,
+        height:60,
+    };
+
+    println!("rect2 area:{}",rect2.area());
+    println!("rect2 area:{:?}",rect2);
 }
 
 // 字段名和参数名一样时，可以简写
@@ -92,4 +100,16 @@ fn area(width: u32, height: u32) -> u32 {
 
 fn area_rectangle(rectangle: &Rectangle) -> u32 {
     rectangle.width * rectangle.height
+}
+
+#[derive(Debug)]
+struct Rectangle2 {
+    width:u32,
+    height:u32,
+}
+
+impl Rectangle2 {
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
 }
