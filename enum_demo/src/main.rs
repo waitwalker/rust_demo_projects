@@ -10,12 +10,15 @@ fn main() {
 
     let some_number = Some(12);
     let some_string = Some("fsdf");
-    let absent_number:Option<i32> = None;
+    let absent_number: Option<i32> = None;
 
-    let x:i32 = 5;
-    let y:Option<i32> = Some(6);
+    let x: i32 = 5;
+    let y: Option<i32> = Some(6);
     let sum = x + y.unwrap();
-    
+
+    let coinUsAlabama = Coin::Quarter(UsState::Alabama);
+    let value = value_in_cents(coinUsAlabama);
+    println!("{:?}",value);
 }
 
 #[derive(Debug)]
@@ -25,7 +28,7 @@ enum IpAddrKind {
 }
 
 impl IpAddrKind {
-    fn call(&self) -> (){
+    fn call(&self) -> () {
         println!("{:?}", self);
     }
 }
@@ -37,6 +40,42 @@ fn route(ip_kind: IpAddrKind) {
         }
         IpAddrKind::V6 => {
             println!("{:?}", ip_kind);
+        }
+    }
+}
+
+#[derive(Debug)]
+enum UsState {
+    Alabama,
+    Alaska,
+}
+#[derive(Debug)]
+enum Coin {
+    Penny,
+    Nickel,
+    Dime,
+    Quarter(UsState),
+}
+
+fn value_in_cents(coin: Coin) -> u8 {
+    match coin {
+        Coin::Penny => {
+            println!("Penny");
+            1
+        }
+        Coin::Nickel => 5,
+        Coin::Dime => 10,
+        Coin::Quarter(state)=>{
+            match state {
+                UsState::Alaska => {
+                    println!("Alaska");
+                    25
+                },
+                UsState::Alabama => {
+                    println!("Alabama");
+                    25
+                },
+            }
         }
     }
 }
