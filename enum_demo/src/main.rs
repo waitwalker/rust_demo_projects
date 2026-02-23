@@ -26,6 +26,14 @@ fn main() {
 
     let none = plus_one(None);
     println!("{:?}",none); 
+
+
+    let v = 0u8;
+    match v {
+        0=>println!("v is 0"),
+        _=>println!("v is {}",v)
+    }
+    
     
 }
 
