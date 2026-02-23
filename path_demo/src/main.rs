@@ -8,11 +8,9 @@ fn main() {
 }
 
 fn f1() -> Result {
-
+    Ok(())
 }
 
-fn  f2() -> IoResult {
-
+fn f2() -> IoResult {
+    Ok(())
 }
-
-
