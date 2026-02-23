@@ -28,10 +28,21 @@ fn main() {
     println!("{:?}",none); 
 
 
-    let v = 0u8;
+    let v = 3u8;
     match v {
         0=>println!("v is 0"),
         _=>println!("v is {}",v)
+    }
+
+    if let 3 = v {
+        println!("v is 3");
+    }
+
+    let some = Some(12);
+    if let Some(10) = some {
+        println!("value is {:?}",some);
+    } else {
+        println!("the value is {:?}", some);
     }
     
     
