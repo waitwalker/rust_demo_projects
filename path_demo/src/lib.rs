@@ -1,8 +1,10 @@
-mod front_of_house {
+pub mod front_of_house {
     pub mod hosting {
         pub fn add_to_waitlist() {
             println!("add to waitlist");
         }
+
+        fn eat() {}
     }
 }
 
@@ -11,6 +13,13 @@ pub fn eat_at_restaurant() {
     crate::front_of_house::hosting::add_to_waitlist();
     // 相对路径
     front_of_house::hosting::add_to_waitlist();
+}
+
+pub mod color {
+    pub mod rgb {
+       pub fn value() {}
+    }
+
 }
 
 fn serve_order() {}
@@ -40,6 +49,12 @@ mod back_of_house {
             }
         }
     }
+
+    pub enum Appetizer {
+        Soup,
+        Salad,
+    }
+
 }
 
 pub fn eat_at_restauranta() {
