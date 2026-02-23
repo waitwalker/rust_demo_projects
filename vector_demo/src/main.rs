@@ -20,4 +20,15 @@ fn main() {
         _ => println!("v1 is not 1"),
     }
 
+    for element in &v {
+        println!("current element is {}", element);
+    }
+
+    for index in 0..v.len() {
+        let current_elment = &v[index];
+        println!("current element is {}", current_elment);
+    }
+
+
+
 }
