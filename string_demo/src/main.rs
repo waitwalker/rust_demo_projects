@@ -30,6 +30,20 @@ fn main() {
     let x8 = format!("{}-{}-{}","hello","world","rust");
     println!("{}",x8);
 
+    let x9 = String::from("你好String");
+    println!("length:{}",x9.len());
+    // println!("{}",x9[0]);
+
+    for elment in x9.bytes() {
+        println!("current byte {}", elment);
+    }
+
+    for elment in x9.chars() {
+        println!("current char {}", elment);
+    }
+
+    let x10 = &x9[0..3];
+    println!("{:?}",x10);
 
     
 }
