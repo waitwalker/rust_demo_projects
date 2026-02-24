@@ -1,5 +1,6 @@
 fn main() {
     println!("Hello, world!");
+    panic!("crash and burn");
     let mut s = String::from("hello");
 
     let data = "initial contents";
