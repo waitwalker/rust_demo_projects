@@ -18,6 +18,14 @@ fn main() {
 
     println!("{}",s1);
 
+    let x1 = String::from("hello");
+    let x2 = String::from("world");
+    let x3 = x1 + &x2;
+    println!("{}",x3);
+    // + 类似于 add(selft,s:&str)函数，x1的所有权移到函数内部了
+    // println!("{}",x1);
+    println!("{}",x2);
+
 
     
 }
