@@ -27,5 +27,9 @@ fn main() {
     println!("{}",x2);
 
 
+    let x8 = format!("{}-{}-{}","hello","world","rust");
+    println!("{}",x8);
+
+
     
 }
