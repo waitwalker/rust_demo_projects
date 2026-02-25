@@ -50,16 +50,26 @@ fn main() {
     let x10 = &x9[0..3];
     println!("{:?}", x10);
 
-    let f = File::open("hello.txt");
+    // let f = File::open("hello.txt");
 
-    let f = match f {
-        Ok(file) => file,
-        Err(error) => match error.kind() {
-            ErrorKind::NotFound => match File::create("hello.txt") {
-                Ok(fc) => fc,
-                Err(e) => panic!("Error creating file: {:?}", e),
-            },
-            other_error => panic!("Error opening file: {:?}", other_error),
-        },
-    };
+    // let f = match f {
+    //     Ok(file) => file,
+    //     Err(error) => match error.kind() {
+    //         ErrorKind::NotFound => match File::create("hello.txt") {
+    //             Ok(fc) => fc,
+    //             Err(e) => panic!("Error creating file: {:?}", e),
+    //         },
+    //         other_error => panic!("Error opening file: {:?}", other_error),
+    //     },
+    // };
+
+    let f = File::open("hello.txt").unwrap_or_else(|error| {
+        if error.kind() == ErrorKind::NotFound {
+            File::create("hello.txt").unwrap_or_else(|error| {
+                panic!("Error creating file :{:?}", error);
+            })
+        } else {
+            panic!("Error opening file :{:?}", error);
+        }
+    });
 }
