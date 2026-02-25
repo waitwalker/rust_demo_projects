@@ -1,6 +1,9 @@
 fn main() {
     println!("Hello, world!");
-    panic!("crash and burn");
+    // panic!("crash and burn");
+    let v = vec![1,3,5];
+    println!("value is {}",v[10]);
+
     let mut s = String::from("hello");
 
     let data = "initial contents";
