@@ -74,5 +74,8 @@ fn main() {
     //     }
     // });
 
-    let f = File::open("hello.txt").unwrap();
+    // let f = File::open("hello.txt").unwrap();
+
+    let f = File::open("hello.txt").expect("无法打开文件 hello.txt");
+    
 }
