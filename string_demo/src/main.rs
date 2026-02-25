@@ -1,7 +1,7 @@
 use std::fs::File;
+use std::io;
 use std::io::ErrorKind;
 use std::io::Read;
-use std::io;
 
 fn main() {
     println!("Hello, world!");
@@ -81,10 +81,8 @@ fn main() {
 
     // let f = File::open("hello.txt").expect("无法打开文件 hello.txt");
 
-    let result = read_username_from_file();
-    
+    let result = read_username_from_file_new();
 }
-
 
 fn read_username_from_file() -> Result<String, io::Error> {
     let f = File::open("hello.txt");
@@ -98,4 +96,11 @@ fn read_username_from_file() -> Result<String, io::Error> {
         Ok(_) => Ok(s),
         Err(e) => Err(e),
     }
+}
+
+fn read_username_from_file_new() -> Result<String, io::Error> {
+    let mut f = File::open("hello.txt")?;
+    let mut s = String::new();
+    f.read_to_string(&mut s)?;
+    Ok(s)
 }
