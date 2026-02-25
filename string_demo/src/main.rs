@@ -63,13 +63,16 @@ fn main() {
     //     },
     // };
 
-    let f = File::open("hello.txt").unwrap_or_else(|error| {
-        if error.kind() == ErrorKind::NotFound {
-            File::create("hello.txt").unwrap_or_else(|error| {
-                panic!("Error creating file :{:?}", error);
-            })
-        } else {
-            panic!("Error opening file :{:?}", error);
-        }
-    });
+    // 通过闭包形式处理
+    // let f = File::open("hello.txt").unwrap_or_else(|error| {
+    //     if error.kind() == ErrorKind::NotFound {
+    //         File::create("hello.txt").unwrap_or_else(|error| {
+    //             panic!("Error creating file :{:?}", error);
+    //         })
+    //     } else {
+    //         panic!("Error opening file :{:?}", error);
+    //     }
+    // });
+
+    let f = File::open("hello.txt").unwrap();
 }
