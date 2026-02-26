@@ -36,7 +36,12 @@ struct Point<T,U> {
 
 // 类似其他语言中的接口
 trait Summary {
-    fn summarize(&self) -> String;
+    // 只定义接口，不实现
+    // fn summarize(&self) -> String;
+    // 可以提供默认实现
+    fn summarize(&self) -> String {
+        String::from("(Read more...)")
+    }
 }
 
 pub struct NewArticle {
