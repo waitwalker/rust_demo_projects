@@ -1,7 +1,8 @@
+use std::fmt::Display;
 fn main() {
     println!("Hello, world!");
 
-    let num_list = [12,45,67,89,23,34,56,78,90,11];
+    let num_list = [12, 45, 67, 89, 23, 34, 56, 78, 90, 11];
     let mut max = num_list[0];
 
     for cur in num_list {
@@ -29,7 +30,7 @@ fn largest(list: &[i32]) -> i32 {
     max
 }
 
-struct Point<T,U> {
+struct Point<T, U> {
     x: T,
     y: U,
 }
@@ -45,10 +46,10 @@ trait Summary {
 }
 
 pub struct NewArticle {
-    pub headline:String,
-    pub location:String,
-    pub author:String,
-    pub content:String,
+    pub headline: String,
+    pub location: String,
+    pub author: String,
+    pub content: String,
 }
 
 impl Summary for NewArticle {
@@ -58,14 +59,27 @@ impl Summary for NewArticle {
 }
 
 pub struct Tweet {
-    username:String,
-    content:String,
-    reply:bool,
-    retweet:bool,
+    username: String,
+    content: String,
+    reply: bool,
+    retweet: bool,
 }
 
 impl Summary for Tweet {
     fn summarize(&self) -> String {
         format!("{}: {}", self.username, self.content)
     }
+}
+
+// 这种写法是语法糖，等价于下面的写法;实现多个trait的item
+fn notify1(item: impl Summary + Display) {
+    println!("Breaking news! {}", item.summarize());
+}
+
+fn notify<T: Summary + Display>(item: T) {
+    println!("Breaking news! {}", item.summarize());
+}
+
+fn notify2<T>(item: T)  where T:Summary + Display{
+    println!("Breaking news! {}", item.summarize());
 }
