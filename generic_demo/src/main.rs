@@ -34,3 +34,33 @@ struct Point<T,U> {
     y: U,
 }
 
+// 类似其他语言中的接口
+trait Summary {
+    fn summarize(&self) -> String;
+}
+
+pub struct NewArticle {
+    pub headline:String,
+    pub location:String,
+    pub author:String,
+    pub content:String,
+}
+
+impl Summary for NewArticle {
+    fn summarize(&self) -> String {
+        format!("{}, by {} ({})", self.headline, self.author, self.location)
+    }
+}
+
+pub struct Tweet {
+    username:String,
+    content:String,
+    reply:bool,
+    retweet:bool,
+}
+
+impl Summary for Tweet {
+    fn summarize(&self) -> String {
+        format!("{}: {}", self.username, self.content)
+    }
+}
