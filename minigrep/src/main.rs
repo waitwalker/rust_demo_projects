@@ -6,7 +6,7 @@ fn main() {
     println!("{:?}", args);
 
     let config = Config::new(&args).unwrap_or_else(|err_message| {
-        println!("Problem parsing arguments: {}", err_message);
+        eprintln!("Problem parsing arguments: {}", err_message);
         process::exit(1);
     });
     if let Err(err_message) = minigrep::run(config) {
