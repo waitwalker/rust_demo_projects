@@ -24,4 +24,6 @@ fn main() {
         println!("arr2 current element {elment}");
     }
 
+    println!("current arr2 = {:?}",arr2);
+
 }
